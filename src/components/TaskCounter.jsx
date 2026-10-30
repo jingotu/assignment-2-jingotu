@@ -7,7 +7,7 @@ function TaskCounter({ tasks }) {
 
   return (
     <span>
-      {completedTasks}/{totalTasks}
+      {totalTasks}/{completedTasks}
     </span>
   )
 }

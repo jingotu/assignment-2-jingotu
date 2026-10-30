@@ -1,6 +1,6 @@
 function TaskItem({ id, title, completed, onToggle, onDelete }) {
   return (
-    <li>
+    <li className={`task-item ${completed ? 'completed' : ''}`}>
       <input
         type="checkbox"
         id={`task-${id}`}

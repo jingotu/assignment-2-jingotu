@@ -1,20 +1,23 @@
 import TaskItem from './TaskItem'
 
 function TaskList({ tasks, onToggle, onDelete }) {
-  return (
-    <ul className="task-list">
-      {tasks.map(task => (
-        <TaskItem
-          key={task.id}
-          id={task.id}
-          title={task.title}
-          completed={task.completed}
-          onToggle={onToggle}
-          onDelete={onDelete}
-        />
-      ))}
-    </ul>
-  )
+    if (tasks.length === 0) {
+        return <p className="empty-state">No tasks to display.</p>
+    }
+    return (
+        <ul className="task-list">
+            {tasks.map(task => (
+                <TaskItem
+                    key={task.id}
+                    id={task.id}
+                    title={task.title}
+                    completed={task.completed}
+                    onToggle={onToggle}
+                    onDelete={onDelete}
+                />
+            ))}
+        </ul>
+    )
 }
 
 export default TaskList
